@@ -21,5 +21,11 @@ class Task(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)
     due_date = models.DateField(blank=True, null=True)
-    priority = models.CharField(max_length=20, blank=True, null=True)
+    priority = {
+        "HIGH": "High",
+        "MEDIUM": "Medium",
+        "LOW": "Low",
+    }
+    name = models.CharField(max_length=20)
+    priority = models.CharField(max_length=6, choices=priority, default="LOW")
     status = models.CharField(max_length=30, blank=True, null=True)

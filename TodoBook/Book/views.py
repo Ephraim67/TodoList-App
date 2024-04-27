@@ -10,9 +10,7 @@ class UserView(generics.CreateAPIView):
     serializer_class = UsersSerializer
     lookup_field = 'pk'
 
-# class UserView(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = User.objects.all()
-#     serializer_class = UsersSerializer
+
 
 class TaskView(generics.CreateAPIView):
     queryset = Task.objects.all()
